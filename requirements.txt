@@ -1,0 +1,6 @@
+requests==2.21.0
+flask==1.1.1
+mysql-connector==2.2.9
+SQLAlchemy==1.3.5
+mysql-connector-python==8.0.16
+pymysql===0.9.3
