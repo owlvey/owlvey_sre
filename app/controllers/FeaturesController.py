@@ -1,11 +1,12 @@
 from flask import Blueprint, request, make_response
 
-from app.components.ProductsComponent import ProductsComponent
+from app.components.FeaturesComponent import FeaturesComponent
+from app.components.SquadsComponent import SquadsComponent
 
 
-api = Blueprint('products_api', __name__)
+api = Blueprint('features_api', __name__)
 
-component = ProductsComponent()
+component = FeaturesComponent()
 
 
 @api.route("/", methods=["GET"])

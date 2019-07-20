@@ -1,11 +1,10 @@
 from flask import Blueprint, request, make_response
+from app.components.ServicesComponent import ServicesComponent
 
-from app.components.ProductsComponent import ProductsComponent
 
+api = Blueprint('sources_api', __name__)
 
-api = Blueprint('products_api', __name__)
-
-component = ProductsComponent()
+component = ServicesComponent()
 
 
 @api.route("/", methods=["GET"])

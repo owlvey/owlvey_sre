@@ -3,15 +3,16 @@ from app.core.BaseEntity import BaseEntity
 from app.core.QueryEntity import QueryEntity
 
 
-class CustomerEntity(BaseEntity, QueryEntity):
+class ServiceEntity(BaseEntity, QueryEntity):
 
-    __tablename__ = "Customers"
+    __tablename__ = "Services"
 
     name = Column(String(256), nullable=False, unique=True)
 
-    def __init__(self):
+    def __init__(self, name=None):
         super().__init__()
+        self.name = name
 
     def _read_fields(self):
-        return CustomerEntity.id.name
+        return ServiceEntity.id.name
 

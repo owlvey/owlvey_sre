@@ -3,11 +3,12 @@
 import json
 
 from sqlalchemy.orm.attributes import QueryableAttribute
+from sqlalchemy import Column, ForeignKey, Integer, String
 
 
 class BaseEntity:
 
-    __tablename__ = None
+    id = Column(Integer, primary_key=True, autoincrement=True)
 
     def __init__(self):
         pass

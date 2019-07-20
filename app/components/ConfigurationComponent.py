@@ -9,7 +9,7 @@ class ConfigurationComponent:
         self.db_host = "localhost"
 
     def get_environment(self):
-        return os.environ.get("environment") or "dev"
+        return os.environ.get("environment") or None
 
     def build_db_connection(self):
         return 'mysql+pymysql://{}:{}@{}/{}'.format(self.db_username,

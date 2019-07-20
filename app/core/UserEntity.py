@@ -7,7 +7,6 @@ class UserEntity(BaseEntity, QueryEntity):
 
     __tablename__ = "Users"
 
-    user_id = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String(256), nullable=False, unique=True)
 
     def __init__(self, email=None):
@@ -15,5 +14,5 @@ class UserEntity(BaseEntity, QueryEntity):
         self.email = email
 
     def _read_fields(self):
-        return UserEntity.user_id.name
+        return UserEntity.id.name
 

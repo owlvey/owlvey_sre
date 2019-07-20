@@ -1,31 +1,16 @@
-from app.core.EntityUtils import EntityUtils
+from app.components.BaseComponent import BaseComponent
 from app.core.CustomerEntity import CustomerEntity
-from app.repositories.EntityRepository import EntityRepository
 
 
-class CustomersComponent:
+class CustomersComponent(BaseComponent):
 
     def __init__(self):
-        self.repository = EntityRepository()
+        super().__init__()
 
-    def create(self, data):
-        user = CustomerEntity()
-        user.from_dict(data)
-        self.repository.create(user)
+    def _build_entity(self) -> CustomerEntity:
+        return CustomerEntity()
 
-    def list(self):
-        customers = CustomerEntity.query.all()
-        return EntityUtils.entities_to_list_dictionaries(customers)
+    def get_by_name(self, name):
+        customer = CustomerEntity.query.filter(CustomerEntity.name == name).first()
+        return customer.to_dict()
 
-    def get(self, key):
-        customer = CustomerEntity.query.filter(CustomerEntity.user_id == key).first()
-        return customer.to_dict() if customer else None
-
-    def delete(self, key):
-        user = CustomerEntity.query.filter(CustomerEntity.user_id == key).first()
-        self.repository.delete(user)
-
-    def update(self, data):
-        user = CustomerEntity.query.filter(CustomerEntity.user_id == data[CustomerEntity.customer_id.name]).first()
-        user.from_dict(data)
-        self.repository.update(user)

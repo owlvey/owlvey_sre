@@ -1,32 +1,16 @@
-from app.core.EntityUtils import EntityUtils
+from app.components.BaseComponent import BaseComponent
+from app.core.BaseEntity import BaseEntity
 from app.core.UserEntity import UserEntity
-from app.repositories.EntityRepository import EntityRepository
 
 
-class UsersComponent:
+class UsersComponent(BaseComponent):
 
     def __init__(self):
-        self.repository = EntityRepository()
+        super().__init__()
 
-    def create(self, data):
-        user = UserEntity()
-        user.from_dict(data)
-        self.repository.create(user)
+    def _build_entity(self) -> BaseEntity:
+        return UserEntity()
 
-    def list(self):
-        users = UserEntity.query.all()
-        return EntityUtils.entities_to_list_dictionaries(users)
-
-    def get(self, key):
-        user = UserEntity.query.filter(UserEntity.user_id == key).first()
-        return user.to_dict() if user else None
-
-    def delete(self, key):
-        user = UserEntity.query.filter(UserEntity.user_id == key).first()
-        self.repository.delete(user)
-
-    def update(self, data):
-        user = UserEntity.query.filter(UserEntity.user_id == data[UserEntity.user_id.name]).first()
-        user.from_dict(data)
-        self.repository.update(user)
+    def get_by_email(self, email):
+        user = UserEntity.query.filter(UserEntity.email == email).first()
         return user.to_dict()

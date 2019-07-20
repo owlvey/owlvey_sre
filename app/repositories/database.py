@@ -4,8 +4,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from app.core.QueryEntity import QueryEntity
 from app.components.ConfigurationComponent import ConfigurationComponent
+
+#  add reference to register automatic creation
+
 from app.core.UserEntity import UserEntity
 from app.core.CustomerEntity import CustomerEntity
+from app.core.SubscriptionEntity import SubscriptionEntity
 
 configuration = ConfigurationComponent()
 
