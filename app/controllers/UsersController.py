@@ -4,30 +4,35 @@ from app.components.UsersComponent import UsersComponent
 
 api = Blueprint('users_api', __name__)
 
+url_prefix = "/users"
 component = UsersComponent()
 
 
-@api.route("/", methods=["GET"])
+@api.route(url_prefix, methods=["GET"])
 def list_items():
     return make_response({"data": component.list()}, 200)
 
 
-@api.route("/", methods=["POST"])
+@api.route(url_prefix + "/<key>", methods=["GET"])
+def get_item(key):
+    return make_response(component.get(key), 200)
+
+
+@api.route(url_prefix, methods=["POST"])
 def create():
     data = request.get_json()
     component.create(data)
     return make_response({}, 200)
 
 
-@api.route("/", methods=["PUT"])
+@api.route(url_prefix, methods=["PUT"])
 def update():
     data = request.get_json()
     result = component.update(data)
     return make_response(result, 200)
 
 
-@api.route("/", methods=["DELETE"])
-def delete():
-    user_id = request.args.get('id')
-    component.delete(user_id)
+@api.route(url_prefix + "/<key>", methods=["DELETE"])
+def delete(key):
+    component.delete(key)
     return make_response({}, 200)

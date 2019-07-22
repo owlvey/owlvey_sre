@@ -13,12 +13,12 @@ os.environ["environment"] = "dev"
 from app.repositories.database import db_session
 
 app = Flask(__name__)
-app.register_blueprint(users_api, url_prefix="/users")
-app.register_blueprint(customers_api, url_prefix="/customers")
-app.register_blueprint(products_api, url_prefix="/products")
-app.register_blueprint(squads_api, url_prefix="/squads")
-app.register_blueprint(services_api, url_prefix="/services")
-app.register_blueprint(features_api, url_prefix="/features")
+app.register_blueprint(users_api)
+app.register_blueprint(customers_api)
+app.register_blueprint(products_api)
+app.register_blueprint(squads_api)
+app.register_blueprint(services_api)
+app.register_blueprint(features_api)
 
 
 @app.route('/')
