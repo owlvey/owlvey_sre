@@ -8,10 +8,10 @@ class ProductEntity(BaseEntity, QueryEntity):
     __tablename__ = "Products"
 
     name = Column(String(256), nullable=False, unique=True)
+    customer_id = Column(Integer, ForeignKey('Customers.id'))
 
-    def __init__(self, name=None):
+    def __init__(self):
         super().__init__()
-        self.name = name
 
     def _read_fields(self):
         return ProductEntity.id.name

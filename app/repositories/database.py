@@ -10,6 +10,7 @@ from app.components.ConfigurationComponent import ConfigurationComponent
 from app.core.UserEntity import UserEntity
 from app.core.CustomerEntity import CustomerEntity
 from app.core.SubscriptionEntity import SubscriptionEntity
+from app.core.SquadEntity import SquadEntity
 
 configuration = ConfigurationComponent()
 

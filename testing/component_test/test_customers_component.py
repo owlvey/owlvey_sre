@@ -21,9 +21,7 @@ class TestCustomersComponent(unittest.TestCase):
         customer = self.customer_component.get_by_name(name)
         user = self.user_component.get_by_email(email)
 
-        self.subscription_component.create(
-            {"customer_id": customer["id"],
-             "user_id": user["id"]})
+        self.subscription_component.create({"customer_id": customer["id"], "user_id": user["id"]})
 
         subscription = self.subscription_component.get_by_customer_user(customer["id"], user["id"])
 

@@ -1,7 +1,6 @@
 #  https://wakatime.com/blog/32-flask-part-1-sqlalchemy-models-to-json
-
 import json
-
+from abc import abstractmethod
 from sqlalchemy.orm.attributes import QueryableAttribute
 from sqlalchemy import Column, ForeignKey, Integer, String
 
@@ -13,53 +12,34 @@ class BaseEntity:
     def __init__(self):
         self._hidden_fields = list()
 
+    def create(self, **kwargs):
+        self.from_dict(kwargs)
+        self._validate()
 
     def _read_fields(self):
         return list()
 
-    def as_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
-
-    def from_kwargs(self, **kwargs):
+    def from_dict(self, data: dict, force=False, detect_missing=True):
         """Update this model with a dictionary."""
-        _force = kwargs.pop("_force", False)
-
         readonly = self._read_fields()
+        if force:
+            readonly = list()
 
         columns = self.__table__.columns.keys()
-        relationships = self.__mapper__.relationships.keys()
-        properties = dir(self)
 
         changes = {}
 
-        for key in columns:
-            if key.startswith("_"):
-                continue
-            allowed = True if _force or key not in readonly else False
-            exists = True if key in kwargs else False
-            if allowed and exists:
-                val = getattr(self, key)
-                if val != kwargs[key]:
-                    changes[key] = {"old": val, "new": kwargs[key]}
-                    setattr(self, key, kwargs[key])
-
-        return changes
-
-    def from_dict(self, data):
-        """Update this model with a dictionary."""
-        readonly = self._read_fields()
-
-        columns = self.__table__.columns.keys()
-        relationships = self.__mapper__.relationships.keys()
-        properties = dir(self)
-
-        changes = {}
+        if detect_missing:
+            diff = set(data.keys()) - set(columns)
+            if diff:
+                raise ValueError("{} is missing".format(",".join(diff)))
 
         for key in columns:
             if key.startswith("_"):
                 continue
             allowed = True if key not in readonly else False
             exists = True if key in data else False
+
             if allowed and exists:
                 val = getattr(self, key)
                 if val != data[key]:

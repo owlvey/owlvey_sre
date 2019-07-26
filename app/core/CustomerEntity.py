@@ -13,6 +13,11 @@ class CustomerEntity(BaseEntity, QueryEntity):
     def __init__(self):
         super().__init__()
 
+    def create(self, name, avatar=None):
+        self.name = name
+        self.avatar = avatar or "https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png"
+        self._validate()
+
     def _read_fields(self):
         return CustomerEntity.id.name
 

@@ -10,3 +10,7 @@ class SquadsComponent(BaseComponent):
 
     def _build_entity(self) -> BaseEntity:
         return SquadEntity()
+
+    def get_by_namea(self, name):
+        squad = SquadEntity.query.filter(SquadEntity.name == name).first()
+        return squad.to_dict()
