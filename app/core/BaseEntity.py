@@ -11,7 +11,8 @@ class BaseEntity:
     id = Column(Integer, primary_key=True, autoincrement=True)
 
     def __init__(self):
-        pass
+        self._hidden_fields = list()
+
 
     def _read_fields(self):
         return list()
@@ -71,7 +72,6 @@ class BaseEntity:
         """Return a dictionary representation of this model."""
         _hide = _hide or list()
         hidden = self._hidden_fields if hasattr(self, "_hidden_fields") else []
-        default = self._default_fields if hasattr(self, "_default_fields") else []
         columns = self.__table__.columns.keys()
         ret_data = {}
         for key in columns:
@@ -81,4 +81,18 @@ class BaseEntity:
                 continue
             ret_data[key] = getattr(self, key)
         return ret_data
+
+    def _validate(self):
+        columns = self.__table__.columns
+        for column in columns:
+            if column.autoincrement is True:
+                pass
+            elif not column.nullable and not getattr(self, column.name):
+                raise ValueError("{} is null".format(column.name))
+
+
+
+
+
+
 

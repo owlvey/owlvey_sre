@@ -8,6 +8,7 @@ class CustomerEntity(BaseEntity, QueryEntity):
     __tablename__ = "Customers"
 
     name = Column(String(256), nullable=False, unique=True)
+    avatar = Column(String(1024), nullable=False, unique=True)
 
     def __init__(self):
         super().__init__()

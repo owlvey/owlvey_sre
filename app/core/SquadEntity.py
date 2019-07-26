@@ -8,6 +8,7 @@ class SquadEntity(BaseEntity, QueryEntity):
     __tablename__ = "Squads"
 
     name = Column(String(256), nullable=False, unique=True)
+    avatar = Column(String(1024), nullable=False, unique=True)
 
     def __init__(self, name=None):
         super().__init__()
