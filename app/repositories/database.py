@@ -11,6 +11,7 @@ from app.core.UserEntity import UserEntity
 from app.core.CustomerEntity import CustomerEntity
 from app.core.SubscriptionEntity import SubscriptionEntity
 from app.core.SquadEntity import SquadEntity
+from app.core.ProductEntity import ProductEntity
 
 configuration = ConfigurationComponent()
 
@@ -18,6 +19,9 @@ if configuration.get_environment() == "prod":
     engine = create_engine(configuration.build_db_connection(), convert_unicode=True)
 elif configuration.get_environment() == "dev":
     engine = create_engine('sqlite:///dev.db')
+    QueryEntity.metadata.create_all(bind=engine)
+elif configuration.get_environment() == "manual":
+    engine = create_engine('sqlite:///manual.db')
     QueryEntity.metadata.create_all(bind=engine)
 else:
     engine = create_engine('sqlite://')

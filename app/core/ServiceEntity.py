@@ -7,7 +7,7 @@ class ServiceEntity(BaseEntity, QueryEntity):
 
     __tablename__ = "Services"
 
-    name = Column(String(256), nullable=False, unique=True)
+    name = Column(String(256), nullable=False, unique=False)
 
     def __init__(self, name=None):
         super().__init__()

@@ -7,7 +7,7 @@ class ProductEntity(BaseEntity, QueryEntity):
 
     __tablename__ = "Products"
 
-    name = Column(String(256), nullable=False, unique=True)
+    name = Column(String(256), nullable=False, unique=False)
     customer_id = Column(Integer, ForeignKey('Customers.id'))
 
     def __init__(self):

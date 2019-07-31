@@ -14,3 +14,5 @@ class CustomersComponent(BaseComponent):
         customer = CustomerEntity.query.filter(CustomerEntity.name == name).first()
         return customer.to_dict()
 
+
+

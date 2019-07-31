@@ -49,3 +49,4 @@ class BaseComponent:
         entity_type = type(entity)
         entity = entity_type.query.filter(entity_type.name == name).first()
         return entity.to_dict()
+
