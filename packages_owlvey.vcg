@@ -1,0 +1,55 @@
+graph:{
+  title:"packages_owlvey"
+  layoutalgorithm:dfs
+  late_edge_labels:yes
+  port_sharing:no
+  manhattan_edges:yes
+  node: {title:"0"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/BaseEntity.py\fn"
+  shape:box
+}
+  node: {title:"1"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/BaseFrame.py\fn"
+  shape:box
+}
+  node: {title:"2"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/CustomerEntity.py\fn"
+  shape:box
+}
+  node: {title:"3"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/EntityUtils.py\fn"
+  shape:box
+}
+  node: {title:"4"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/FeatureEntity.py\fn"
+  shape:box
+}
+  node: {title:"5"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/JournalEntity.py\fn"
+  shape:box
+}
+  node: {title:"6"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/ProductEntity.py\fn"
+  shape:box
+}
+  node: {title:"7"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/QueryEntity.py\fn"
+  shape:box
+}
+  node: {title:"8"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/ServiceEntity.py\fn"
+  shape:box
+}
+  node: {title:"9"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/ServiceFeatureEntity.py\fn"
+  shape:box
+}
+  node: {title:"10"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/SourceEntity.py\fn"
+  shape:box
+}
+  node: {title:"11"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/SquadEntity.py\fn"
+  shape:box
+}
+  node: {title:"12"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/SubscriptionEntity.py\fn"
+  shape:box
+}
+  node: {title:"13"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/UserEntity.py\fn"
+  shape:box
+}
+  node: {title:"14"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/UsersFrame.py\fn"
+  shape:box
+}
+  node: {title:"15"  label:"\fb/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/__init__.py\fn"
+  shape:box
+}
+}

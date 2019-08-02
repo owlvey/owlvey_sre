@@ -12,6 +12,9 @@ from app.core.CustomerEntity import CustomerEntity
 from app.core.SubscriptionEntity import SubscriptionEntity
 from app.core.SquadEntity import SquadEntity
 from app.core.ProductEntity import ProductEntity
+from app.core.FeatureEntity import FeatureEntity
+from app.core.ServiceEntity import ServiceEntity
+from app.core.ServiceFeatureEntity import ServiceFeatureEntity
 
 configuration = ConfigurationComponent()
 

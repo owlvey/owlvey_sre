@@ -1,0 +1,49 @@
+graph:{
+  title:"classes_owlvey"
+  layoutalgorithm:dfs
+  late_edge_labels:yes
+  port_sharing:no
+  manhattan_edges:yes
+  node: {title:"0"  label:"\fbBaseEntity\fn\n\f_____________\n\f08id : Column\n\f_____________\n\f10create()\n\f10from_dict()\n\f10to_dict()"
+  shape:box
+}
+  node: {title:"1"  label:"\fbBaseFrame\fn\n\f______________\n\f10get_metadata()\n\f10get_schema()\n\f10load_data()\n\f10to_dict()"
+  shape:box
+}
+  node: {title:"2"  label:"\fbCustomerEntity\fn\n\f_________________\n\f08avatar : Column\n\f08avatar : str\n\f08name\n\f08name : Column\n\f_________________\n\f10create()"
+  shape:box
+}
+  node: {title:"3"  label:"\fbEntityUtils\fn\n\f_______________________________\n\f10entities_to_list_dictionaries()"
+  shape:box
+}
+  node: {title:"4"  label:"\fbFeatureEntity\fn\n\f_____________________\n\f08name : Column\n\f08name : NoneType\n\f08product_id : Column\n\f_____________________"
+  shape:box
+}
+  node: {title:"5"  label:"\fbJournalEntity\fn\n\f____________________\n\f08end : Column\n\f08good : Column\n\f08name : NoneType\n\f08source_id : Column\n\f08start : Column\n\f08total : Column\n\f____________________"
+  shape:box
+}
+  node: {title:"6"  label:"\fbProductEntity\fn\n\f______________________\n\f08customer_id : Column\n\f08name : Column\n\f______________________"
+  shape:box
+}
+  node: {title:"7"  label:"\fbServiceEntity\fn\n\f_____________________\n\f08name : Column\n\f08name : NoneType\n\f08product_id : Column\n\f_____________________"
+  shape:box
+}
+  node: {title:"8"  label:"\fbServiceFeatureEntity\fn\n\f______________________\n\f08feature_id\n\f08feature_id : Column\n\f08service_id\n\f08service_id : Column\n\f______________________\n\f10create()"
+  shape:box
+}
+  node: {title:"9"  label:"\fbSourceEntity\fn\n\f_________________\n\f08name : Column\n\f08name : NoneType\n\f_________________"
+  shape:box
+}
+  node: {title:"10"  label:"\fbSquadEntity\fn\n\f_________________\n\f08avatar : Column\n\f08avatar : str\n\f08name\n\f08name : Column\n\f_________________\n\f10create()"
+  shape:box
+}
+  node: {title:"11"  label:"\fbSubscriptionEntity\fn\n\f______________________\n\f08customer_id\n\f08customer_id : Column\n\f08user_id\n\f08user_id : Column\n\f______________________\n\f10create()"
+  shape:box
+}
+  node: {title:"12"  label:"\fbUserEntity\fn\n\f_________________\n\f08avatar : Column\n\f08avatar : str\n\f08email\n\f08email : Column\n\f_________________\n\f10create()"
+  shape:box
+}
+  node: {title:"13"  label:"\fbUsersFrame\fn\n\f______________\n\f10add()\n\f10get_metadata()\n\f10get_schema()\n\f10load_data()\n\f10to_dict()"
+  shape:box
+}
+}

@@ -1,0 +1,20 @@
+digraph "packages_owlvey" {
+charset="utf-8"
+rankdir=BT
+"0" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/BaseEntity.py", shape="box"];
+"1" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/BaseFrame.py", shape="box"];
+"2" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/CustomerEntity.py", shape="box"];
+"3" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/EntityUtils.py", shape="box"];
+"4" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/FeatureEntity.py", shape="box"];
+"5" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/JournalEntity.py", shape="box"];
+"6" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/ProductEntity.py", shape="box"];
+"7" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/QueryEntity.py", shape="box"];
+"8" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/ServiceEntity.py", shape="box"];
+"9" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/ServiceFeatureEntity.py", shape="box"];
+"10" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/SourceEntity.py", shape="box"];
+"11" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/SquadEntity.py", shape="box"];
+"12" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/SubscriptionEntity.py", shape="box"];
+"13" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/UserEntity.py", shape="box"];
+"14" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/UsersFrame.py", shape="box"];
+"15" [label="/Users/Gregory/Documents/open_owlvey/owlvey_sre/app/core/__init__.py", shape="box"];
+}

@@ -7,7 +7,8 @@ class FeatureEntity(BaseEntity, QueryEntity):
 
     __tablename__ = "Features"
 
-    name = Column(String(256), nullable=False, unique=True)
+    name = Column(String(256), nullable=False, unique=False)
+    product_id = Column(Integer, ForeignKey('Products.id'))
 
     def __init__(self, name=None):
         super().__init__()

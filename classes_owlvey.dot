@@ -1,0 +1,18 @@
+digraph "classes_owlvey" {
+charset="utf-8"
+rankdir=BT
+"0" [label="{BaseEntity|id : Column\l|create()\lfrom_dict()\lto_dict()\l}", shape="record"];
+"1" [label="{BaseFrame|\l|get_metadata()\lget_schema()\lload_data()\lto_dict()\l}", shape="record"];
+"2" [label="{CustomerEntity|avatar : Column\lavatar : str\lname\lname : Column\l|create()\l}", shape="record"];
+"3" [label="{EntityUtils|\l|entities_to_list_dictionaries()\l}", shape="record"];
+"4" [label="{FeatureEntity|name : Column\lname : NoneType\lproduct_id : Column\l|}", shape="record"];
+"5" [label="{JournalEntity|end : Column\lgood : Column\lname : NoneType\lsource_id : Column\lstart : Column\ltotal : Column\l|}", shape="record"];
+"6" [label="{ProductEntity|customer_id : Column\lname : Column\l|}", shape="record"];
+"7" [label="{ServiceEntity|name : Column\lname : NoneType\lproduct_id : Column\l|}", shape="record"];
+"8" [label="{ServiceFeatureEntity|feature_id\lfeature_id : Column\lservice_id\lservice_id : Column\l|create()\l}", shape="record"];
+"9" [label="{SourceEntity|name : Column\lname : NoneType\l|}", shape="record"];
+"10" [label="{SquadEntity|avatar : Column\lavatar : str\lname\lname : Column\l|create()\l}", shape="record"];
+"11" [label="{SubscriptionEntity|customer_id\lcustomer_id : Column\luser_id\luser_id : Column\l|create()\l}", shape="record"];
+"12" [label="{UserEntity|avatar : Column\lavatar : str\lemail\lemail : Column\l|create()\l}", shape="record"];
+"13" [label="{UsersFrame|\l|add()\lget_metadata()\lget_schema()\lload_data()\lto_dict()\l}", shape="record"];
+}

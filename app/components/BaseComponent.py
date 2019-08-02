@@ -50,3 +50,15 @@ class BaseComponent:
         entity = entity_type.query.filter(entity_type.name == name).first()
         return entity.to_dict()
 
+    def get_by_name_relation_id(self, relation_id, name):
+        entity = self._build_entity()
+        entity_type = type(entity)
+        relationship = next((x for x in entity.__table__.columns if len(x.foreign_keys) > 0), None)
+        entity = entity_type.query.filter(getattr(entity_type, relationship.name) == relation_id and
+                                         entity_type.name == name).first()
+        return entity.to_dict()
+
+
+
+
+
